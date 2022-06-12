@@ -6,6 +6,7 @@ const Homepage = () => {
   const { googleSignIn, user } = UserAuth();
   const navigate = useNavigate();
 
+
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
@@ -16,6 +17,7 @@ const Homepage = () => {
 
   useEffect(() => {
     if (user != null) {
+      console.log(user)
       navigate('/search');
     }
   }, [user,navigate]);
